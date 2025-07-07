@@ -2,11 +2,9 @@
 
 from fastapi import FastAPI
 import chromadb
-import os
 
-# ساخت کلاینت ChromaDB
-persist_dir = os.getenv("CHROMA_PERSIST_DIR", ".chroma")
-client = chromadb.Client(chromadb.config.Settings(chroma_db_impl="duckdb+parquet", persist_directory=persist_dir))
+# ساخت کلاینت ChromaDB با معماری جدید
+client = chromadb.Client()
 
 # تعریف اپلیکیشن FastAPI
 app = FastAPI()
